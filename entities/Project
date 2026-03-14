@@ -1,0 +1,256 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Project name"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "idea",
+        "mvp",
+        "prototype",
+        "product_ready",
+        "launched",
+        "growth",
+        "scaling"
+      ],
+      "default": "idea",
+      "description": "Lifecycle stage"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Product being launched"
+    },
+    "product_type": {
+      "type": "string",
+      "enum": [
+        "physical",
+        "digital"
+      ],
+      "default": "digital",
+      "description": "Physical or Digital product"
+    },
+    "category": {
+      "type": "string",
+      "description": "Product category"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "document_content": {
+      "type": "string",
+      "description": "Uploaded/pasted document content (whitepaper, PRD)"
+    },
+    "document_source": {
+      "type": "string",
+      "enum": [
+        "paste",
+        "pdf",
+        "docx"
+      ],
+      "description": "How the document was ingested"
+    },
+    "target_markets": {
+      "type": "string",
+      "description": "Comma-separated target markets"
+    },
+    "target_budget": {
+      "type": "number",
+      "description": "Launch budget in USD"
+    },
+    "launch_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Planned launch date"
+    },
+    "primary_goal": {
+      "type": "string",
+      "enum": [
+        "awareness",
+        "leads",
+        "sales",
+        "trial"
+      ],
+      "description": "Primary campaign objective"
+    },
+    "price": {
+      "type": "number",
+      "description": "Planned product price"
+    },
+    "currency": {
+      "type": "string",
+      "description": "Currency code (e.g., USD, EUR, GBP)"
+    },
+    "signals": {
+      "type": "string",
+      "description": "Early signals: signups, traffic notes, waitlist info"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI-generated keywords"
+    },
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Identified competitors"
+    },
+    "value_props": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Key value propositions"
+    },
+    "roi_forecast": {
+      "type": "number",
+      "description": "Predicted ROI percentage"
+    },
+    "top_regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "opportunity_score": {
+            "type": "number"
+          },
+          "estimated_cpm": {
+            "type": "number"
+          },
+          "audience_size": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Top market opportunities"
+    },
+    "survey_kit": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI-generated survey questions"
+    },
+    "persona_fit_score": {
+      "type": "number",
+      "description": "Persona fit score 0-100"
+    },
+    "personas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "demographics": {
+            "type": "string"
+          },
+          "pain_points": {
+            "type": "string"
+          },
+          "fit_score": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Generated personas"
+    },
+    "feature_confusion": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "feature": {
+            "type": "string"
+          },
+          "issue": {
+            "type": "string"
+          },
+          "simplified": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Feature confusion detector results"
+    },
+    "executive_summary": {
+      "type": "string",
+      "description": "AI-generated executive summary"
+    },
+    "run_status": {
+      "type": "string",
+      "enum": [
+        "idle",
+        "running",
+        "completed",
+        "failed"
+      ],
+      "default": "idle",
+      "description": "Status of Run Project pipeline"
+    },
+    "run_progress": {
+      "type": "number",
+      "description": "Progress percentage of Run Project"
+    },
+    "last_run_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last time Run Project was executed"
+    },
+    "confidence_score": {
+      "type": "number",
+      "description": "Overall confidence score for AI outputs"
+    },
+    "problem": {
+      "type": "string",
+      "description": "Problem this product solves"
+    },
+    "personas_input": {
+      "type": "string",
+      "description": "Buyer personas description or notes"
+    },
+    "pricing_info": {
+      "type": "string",
+      "description": "Pricing or planned pricing details"
+    },
+    "target_geos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Target geographies"
+    },
+    "resources_notes": {
+      "type": "string",
+      "description": "Resources/tools available"
+    },
+    "competitors_input": {
+      "type": "string",
+      "description": "Optional competitor list or notes"
+    }
+  },
+  "required": [
+    "name",
+    "product_name"
+  ]
+}
